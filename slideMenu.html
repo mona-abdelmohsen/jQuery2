@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Menu</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        .sideDiv {
+            height: 680px;
+            width: 100px;
+            background-color: rgb(149, 146, 146);
+        }
+
+        .sideMenu {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sideDiv">
+        <ul class="sideMenu">
+            <li class="item1">item1 <div>hello</div>
+            </li>
+            <li class="item2">item2 <div>hi</div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(".sideDiv").hover(function () {
+            $(this).width("200px")
+            $(".sideMenu").css("display", "block")
+
+        }, function () {
+            $(this).width("100px");
+            $(".sideMenu").css("display", "none")
+        });
+
+        $(".item1 div").hide()
+        $(".item2 div").hide()
+        $("li").click(function () {
+            $(this).children().slideToggle(1000);
+        })           
+    </script>
+</body>
+
+</html>
